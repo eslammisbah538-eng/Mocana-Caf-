@@ -17,10 +17,18 @@
         // ── Progress Bar + Navbar Scroll (مجمّعين في listener واحد + passive لتحسين السكرول على الموبايل) ──
         const progressBar = document.getElementById('progressBar');
         const navbarEl = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
+        let scrollTicking = false;
+        function updateOnScroll() {
             const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
             progressBar.style.transform = `scaleX(${pct})`;
             navbarEl.classList.toggle('scrolled', window.scrollY > 30);
+            scrollTicking = false;
+        }
+        window.addEventListener('scroll', () => {
+            if (!scrollTicking) {
+                requestAnimationFrame(updateOnScroll);
+                scrollTicking = true;
+            }
         }, { passive: true });
 
         // ── Mobile Menu ──
