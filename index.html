@@ -1,1 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- تحسين محركات البحث الأساسية (SEO) -->
+    <title>Mocana Café — Specialty Coffee & Rooftop Dining</title>
+    <meta name="description"
+        content="Welcome to Mocana Café — where crafted specialty coffee, elegant flavors, and unforgettable rooftop city views come together. Book your table today.">
+    <meta name="keywords"
+        content="Mocana Cafe, specialty coffee, rooftop dining, cafe, restaurant, coffee shop, book a table">
+    <meta name="author" content="Front-End Developer">
+    <meta name="robots" content="index, follow">
+
+    <!-- كود الـ Open Graph (لتحسين شكل الرابط عند مشاركته على الفيسبوك أو لينكد إن) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mocana Café — Specialty Coffee & Rooftop Dining">
+    <meta property="og:description"
+        content="Discover crafted specialty coffee and premium rooftop dining with beautiful city views at Mocana Café.">
+    <meta property="og:image" content="photo/otg.png"> <!-- ضع هنا مسار صورة مصغرة لموقعك -->
+    <meta property="og:url" content="mocana-cafe.vercel.app">
+    <!-- يمكنك تعديل الرابط برابط موقعك الفعلي -->
+
+    <!-- كود كروت تويتر (Twitter Cards) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mocana Café — Specialty Coffee & Rooftop Dining">
+    <meta name="twitter:description"
+        content="Discover crafted specialty coffee and premium rooftop dining with beautiful city views at Mocana Café.">
+    <meta name="twitter:image" content="assets/images/mocana-preview.jpg">
+
+    <!-- أيقونة المتصفح (Favicon) لتخصيص الهوية ومنع ظهور الأيقونات الافتراضية -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- الروابط الخارجية والخطوط المعتمدة في التصميم -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome مخفف: بس نوعين الأيقونات المستخدمين فعليًا (solid + brands) بدل المكتبة كاملة -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css">
+
+    <!-- ملف الـ CSS الخاص بالموقع -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+
+    <nav id="navbar">
+        <div class="nav-logo">Mocana <span>Café</span></div>
+        <div class="nav-left">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">Our Story</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#reservation">Reserve</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <button class="nav-cta js-book-btn">Book
+                Now</button>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+            <div class="nav-hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">Our Story</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#reservation">Reserve</a>
+        <button class="nav-cta js-book-btn">Book
+            Now</button>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-overlay-bottom"></div>
+        <div class="hero-particles" id="heroParticles"></div>
+
+        <div class="hero-body">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-circle" style="font-size:6px"></i> Rooftop Café with City
+                    Views</div>
+                <h1 class="hero-title">
+                    Where Coffee
+                    <div class="typing-text accent-line"><span id="typingText"></span><span class="cursor-blink"></span>
+                    </div>
+                </h1>
+                <p class="hero-sub">Mocana Café — where crafted coffee, elegant flavors, and unforgettable moments
+                    come together.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary js-book-btn">
+                        <span>Reserve a Table</span>
+                    </button>
+                    <button class="btn-outline js-menu-btn">
+                        <span>Explore Menu</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- MENU -->
+    <section id="menu">
+        <div class="section-inner">
+            <div class="menu-header" data-reveal>
+                <div>
+                    <div class="section-label">What We Offer</div>
+                    <h2 class="section-title">Crafted with <em>Passion</em></h2>
+                    <p class="section-sub">Premium ingredients, innovative preparation, and cuisine worth
+                        experiencing.</p>
+                </div>
+                <div class="menu-tabs">
+                    <button class="menu-tab active" data-tab="coffee"><span>Coffee</span></button>
+                    <button class="menu-tab" data-tab="food"><span>Food</span></button>
+                    <button class="menu-tab" data-tab="desserts"><span>Desserts</span></button>
+                </div>
+            </div>
+
+            <div class="menu-panel active" id="tab-coffee">
+                <div class="menu-card" data-reveal>
+                    <div class="menu-card-img-wrap">
+                        <img class="menu-card-img"
+                            src="https://media.istockphoto.com/id/2200892658/photo/close-up-on-a-coffee-maker-making-a-espresso.webp?a=1&b=1&s=612x612&w=0&k=20&c=MtlgH9kHdrUM5JCYqHNlJQ-cl_8w6pzqLRU7j75NCQg="
+                            alt="Espresso" loading="lazy">
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-top"><span class="menu-card-name">Espresso</span><span
+                                class="menu-card-price">$3.50</span></div>
+                        <p class="menu-card-desc">Bold and rich, perfectly crafted single shot with deep,
+                            concentrated flavor.</p>
+                        <span class="menu-card-tag">Chef's Pick</span>
+                    </div>
+                </div>
+                <div class="menu-card" data-reveal style="transition-delay:0.1s">
+                    <div class="menu-card-img-wrap">
+                        <img class="menu-card-img"
+                            src="https://images.unsplash.com/photo-1502462041640-b3d7e50d0662?w=400&auto=format&fit=crop&q=60"
+                            alt="Cloud Latte" loading="lazy">
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-top"><span class="menu-card-name">Cloud Latte</span><span
+                                class="menu-card-price">$4.50</span></div>
+                        <p class="menu-card-desc">Silky steamed milk, double espresso, signature cloud foam with
+                            vanilla dust.</p>
+                    </div>
+                </div>
+                <div class="menu-card" data-reveal style="transition-delay:0.2s">
+                    <div class="menu-card-img-wrap">
+                        <img class="menu-card-img"
+                            src="https://images.unsplash.com/photo-1600056781444-55f3b64235e3?w=400&auto=format&fit=crop&q=60"
+                            alt="Mocha" loading="lazy">
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-top"><span class="menu-card-name">Mocha</span><span
+                                class="menu-card-price">$5.00</span></div>
+                        <p class="menu-card-desc">Espresso with steamed milk, rich chocolate, and creamy foam on
+                            top.</p>
+                        <span class="menu-card-tag">Seasonal</span>
+                    </div>
+                </div>
+                <div class="menu-card" data-reveal style="transition-delay:0.3s">
+                    <div class="menu-card-img-wrap">
+                        <img class="menu-card-img"
+                            src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=400&auto=format&fit=crop&q=60"
+                            alt="Iced Coffee" loading="lazy">
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-top"><span class="menu-card-name">Iced Coffee</span><span
+                                class="menu-card-price">$4.00</span></div>
+                        <p class="menu-card-desc">Chilled and refreshing, cold brew served over ice, perfect for
+                            warm days.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-panel" id="tab-food">
+                <div class="menu-card">
+                    <div class="menu-card-img-wrap"><img class="menu-card-img"
+                            src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500&h=400&fit=crop"
+                            alt="Avocado Toast" loading="lazy"></div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-top"><span class="menu-card-name">Avocado Toast Royal</span><span
+                                class="menu-card-price">$12.00</span></div>
+                        <p class="menu-card-desc">Sourdough, smashed avocado, poached egg, microgreens, chili,
+                            truffle oil.</p><span class="menu-card-tag">Most Popular</span>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-img-wrap"><img class="menu-card-img"
+                            src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&h=400&fit=crop"
+                            alt="Grain Bowl" loading="lazy"></div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-top"><span class="menu-card-name">Grain Bowl Heaven</span><span
+                                class="menu-card-price">$14.00</span></div>
+                        <p class="menu-card-desc">Quinoa, roasted chickpeas, tahini dressing, pickled onions,
+                            cucumber, pomegranate.</p>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-img-wrap"><img class="menu-card-img"
+                            src="https://plus.unsplash.com/premium_photo-1664648005751-549bd0be0f36?w=400&auto=format&fit=crop&q=60"
+                            alt="Buddha Bowl" loading="lazy"></div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-top"><span class="menu-card-name">Buddha Bowl</span><span
+                                class="menu-card-price">$18.00</span></div>
+                        <p class="menu-card-desc">Quinoa, roasted vegetables, chickpeas, tahini dressing, spinach,
+                            and seeds.</p><span class="menu-card-tag">Chef's Pick</span>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-img-wrap"><img class="menu-card-img"
+                            src="https://media.istockphoto.com/id/2223438386/photo/homemade-everything-bagel-with-cream-cheese.webp?a=1&b=1&s=612x612&w=0&k=20&c=og3dsrdjuBbYmZlpSa_n8uH-i-62pLPncrSsZM-izP0="
+                            alt="Bagel" loading="lazy"></div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-top"><span class="menu-card-name">Bagel with Cream Cheese</span><span
+                                class="menu-card-price">$15.00</span></div>
+                        <p class="menu-card-desc">Toasted bagel, smooth cream cheese spread, fresh cucumber slices,
+                            and chives.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-panel" id="tab-desserts">
+                <div class="menu-card">
+                    <div class="menu-card-img-wrap"><img class="menu-card-img"
+                            src="https://images.unsplash.com/photo-1702744382319-20efefc9dc19?w=400&auto=format&fit=crop&q=60"
+                            alt="Carrot Cake" loading="lazy"></div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-top"><span class="menu-card-name">Carrot Cake</span><span
+                                class="menu-card-price">$9.00</span></div>
+                        <p class="menu-card-desc">Moist carrot cake with cream cheese frosting and walnut crunch on
+                            top.</p><span class="menu-card-tag">Signature</span>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-img-wrap"><img class="menu-card-img"
+                            src="https://plus.unsplash.com/premium_photo-1672192166851-71d218e64544?w=400&auto=format&fit=crop&q=60"
+                            alt="Strawberry Shortcake" loading="lazy"></div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-top"><span class="menu-card-name">Strawberry Shortcake</span><span
+                                class="menu-card-price">$11.00</span></div>
+                        <p class="menu-card-desc">Light sponge cake, fresh strawberries, whipped cream, simple and
+                            delicious.</p>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-img-wrap"><img class="menu-card-img"
+                            src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&h=400&fit=crop"
+                            alt="Dark Chocolate Pot" loading="lazy"></div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-top"><span class="menu-card-name">Dark Chocolate Pot</span><span
+                                class="menu-card-price">$10.00</span></div>
+                        <p class="menu-card-desc">72% dark chocolate fondant, salted caramel core, tahini ice cream.
+                        </p><span class="menu-card-tag">New</span>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-card-img-wrap"><img class="menu-card-img"
+                            src="https://images.unsplash.com/photo-1695088957420-c3b97d1f1138?w=400&auto=format&fit=crop&q=60"
+                            alt="Cheesecake" loading="lazy"></div>
+                    <div class="menu-card-body">
+                        <div class="menu-card-top"><span class="menu-card-name">Cheesecake Slice</span><span
+                                class="menu-card-price">$9.50</span></div>
+                        <p class="menu-card-desc">Creamy New York style cheesecake with berry topping and crumb
+                            base.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="section-inner">
+            <div class="about-grid">
+                <div class="about-img-wrap" data-reveal="left">
+                    <img class="about-img-real"
+                        src="https://plus.unsplash.com/premium_photo-1670984937809-31f03f34ccdf?q=80&w=726&auto=format&fit=crop"
+                        alt="Inside Mocana Café" loading="lazy">
+                    <div class="about-float-card">
+                        <div class="about-float-num">6+</div>
+                        <div class="about-float-label">Years of Excellence</div>
+                    </div>
+                </div>
+                <div data-reveal="right">
+                    <div class="section-label">Our Story</div>
+                    <h2 class="section-title">Born from<br>Passion for <em>Excellence</em></h2>
+                    <p class="section-sub">A modern rooftop café that blends contemporary aesthetics with timeless
+                        hospitality, offering an elevated experience above the city.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon"><i class="fas fa-leaf"></i></div>
+                            <div>
+                                <div class="about-feature-title">Premium Quality Beans</div>
+                                <div class="about-feature-text">Sourced from the finest coffee-growing regions
+                                    worldwide, selected for quality and flavor profile.</div>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon"><div class="about-feature-icon"><i class="fas fa-mortar-pestle"></i></div></div>
+                            <div>
+                                <div class="about-feature-title">Contemporary Cuisine</div>
+                                <div class="about-feature-text">Innovative dishes crafted by our talented team using
+                                    fresh, high-quality ingredients and modern techniques.</div>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon"><i class="fas fa-city"></i></div>
+                            <div>
+                                <div class="about-feature-title">Stunning Rooftop Setting</div>
+                                <div class="about-feature-text">Located on an exclusive rooftop with panoramic city
+                                    views, creating the perfect ambiance for every occasion.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+        <div class="section-inner">
+            <div style="text-align:center; margin-bottom:48px;" data-reveal>
+                <div class="section-label" style="justify-content:center">Guest Reviews</div>
+                <h2 class="section-title">What Our Guests Say</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-reveal style="transition-delay:0s">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">Exceptional ambiance and outstanding coffee. A perfect escape above
+                        the city hustle.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">F</div>
+                        <div>
+                            <div class="testimonial-name">Fatima Ahmed</div>
+                            <div class="testimonial-role">Regular Guest</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-reveal style="transition-delay:0.15s">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">Impeccable service, contemporary design, and delicious food. Highly
+                        recommended!</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">M</div>
+                        <div>
+                            <div class="testimonial-name">Mohamed Hassan</div>
+                            <div class="testimonial-role">Entrepreneur</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-reveal style="transition-delay:0.3s">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">Perfect for meetings and special moments. The atmosphere is
+                        sophisticated and welcoming!</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">L</div>
+                        <div>
+                            <div class="testimonial-name">Layla Adel</div>
+                            <div class="testimonial-role">Designer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESERVATION -->
+    <section id="reservation">
+        <div class="section-inner">
+            <div class="res-grid">
+                <div data-reveal="left">
+                    <div class="section-label">Book Your Table</div>
+                    <h2 class="section-title">Reserve Your Spot<br>Above the <em>City</em></h2>
+                    <p class="section-sub">We maintain exclusive seating. Reserve ahead to secure your table with
+                        the best views.</p>
+                    <div class="res-info-list">
+                        <div class="res-info-row">
+                            <div class="res-info-icon"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <div class="res-info-title">Hours</div>
+                                <div class="res-info-val">Sun - Thu: 8:00 AM - 11:00 PM</div>
+                                <div class="res-info-val">Fri - Sat: 9:00 AM - 12:00 AM</div>
+                            </div>
+                        </div>
+                        <div class="res-info-row">
+                            <div class="res-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <div class="res-info-title">Location</div>
+                                <div class="res-info-val"> The Summit Tower<br>New Cairo</div>
+                            </div>
+                        </div>
+                        <div class="res-info-row">
+                            <div class="res-info-icon"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <div class="res-info-title">Call Us</div>
+                                <div class="res-info-val">+20 1103023916</div>
+                            </div>
+                        </div>
+                        <div class="res-info-row">
+                            <div class="res-info-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <div class="res-info-title">Email</div>
+                                <div class="res-info-val">hello@mocanacafe.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-reveal="right">
+                    <div class="res-form-wrap">
+                        <div class="res-form-title">Reserve Your Table</div>
+                        <form id="reservationForm">
+                            <div class="form-row">
+                                <div class="form-field"><label for="firstName">First Name</label><input type="text"
+                                        id="firstName" placeholder="enter your first name" required></div>
+                                <div class="form-field"><label for="lastName">Last Name</label><input type="text"
+                                        id="lastName" placeholder="enter your last name" required></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-field"><label for="reservationDate">Date</label><input type="date"
+                                        id="reservationDate" required></div>
+                                <div class="form-field"><label for="reservationTime">Time</label>
+                                    <select id="reservationTime" required>
+                                        <option value="">Select Time</option>
+                                        <option>8:00 AM</option>
+                                        <option>9:30 AM</option>
+                                        <option>10:00 AM</option>
+                                        <option>11:00 AM</option>
+                                        <option>11:30 AM</option>
+                                        <option>12:00 PM</option>
+                                        <option>12:30 PM</option>
+                                        <option>2:00 PM</option>
+                                        <option>3:30 PM</option>
+                                        <option>4:00 PM</option>
+                                        <option>5:00 PM</option>
+                                        <option>5:30 PM</option>
+                                        <option>6:00 PM</option>
+                                        <option>6:30 PM</option>
+                                        <option>7:30 PM</option>
+                                        <option>9:00 PM</option>
+                                        <option>10:30 PM</option>
+                                        <option>11:30 PM</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-field"><label>Guests</label>
+                                    <select id="guestCount">
+                                        <option>1 Guest</option>
+                                        <option selected>2 Guests</option>
+                                        <option>3 Guests</option>
+                                        <option>4 Guests</option>
+                                        <option>5-6 Guests</option>
+                                        <option>Private Event</option>
+                                    </select>
+                                </div>
+                                <div class="form-field"><label for="phone">Phone</label><input type="tel" id="phone"
+                                        placeholder="enter your phone number" required></div>
+                            </div>
+                            <div class="form-field"><label for="email">Email</label><input type="email" id="email"
+                                    placeholder="enter your email" required></div>
+                            <div class="form-field"><label for="specialRequests">Special Requests</label><textarea
+                                    id="specialRequests"
+                                    placeholder="Allergies, celebrations, seating preferences…"></textarea></div>
+                            <button type="submit" class="form-submit" id="submitBtn"><span>Confirm Reservation
+                                    →</span></button>
+                            <div class="form-feedback" id="formFeedback"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-inner">
+            <div class="footer-top" data-reveal>
+                <div>
+                    <div class="footer-logo">Mocana <span>Café</span></div>
+                    <p class="footer-desc">A contemporary rooftop refuge where excellent coffee meets innovative
+                        cuisine and panoramic city views. Every visit is an experience above the ordinary.</p>
+                </div>
+                <div>
+                    <div class="footer-col-title">Explore</div>
+                    <div class="footer-links">
+                        <a href="#home">Home</a><a href="#menu">Menu</a>
+                        <a href="#about">Story</a><a href="#reservation">Reserve</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-col-title">Visit</div>
+                    <div class="footer-links">
+                        <a href="#"> The Summit Tower</a>
+                        <a href="#">New Cairo</a>
+                        <a href="tel:+201103023916">+20 1103023916</a>
+                        <a href="mailto:hello@mocanacafe.com">hello@mocanacafe.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span class="footer-copy">© 2026 Mocana Café. All rights reserved.</span>
+                <span class="footer-credits">Designed and developed by <strong>Islam Misbah</strong></span>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="floating-btn js-book-btn" id="floatingBtn" title="Book Now">
+        <i class="fas fa-calendar-alt"></i>
+    </button>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
